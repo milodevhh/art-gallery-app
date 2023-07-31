@@ -2,7 +2,8 @@ import Image from "next/image";
 
 export default function ArtPieces({ pieces }) {
   return (
-    <ul>
+    <>
+      <h1> List of all Art Pieces</h1>
       {pieces.map((piece) => {
         return (
           <>
@@ -12,14 +13,12 @@ export default function ArtPieces({ pieces }) {
               width={300}
               alt={piece.name}
             />
-            <li key={piece.slug}>
-              title={piece.name}
-              artist={piece.artist}
-            </li>
+            <h2 key={piece.slug}>{piece.name}</h2>
+            <h3>{piece.artist}</h3>
           </>
         );
       })}
-    </ul>
+    </>
   );
 }
 
