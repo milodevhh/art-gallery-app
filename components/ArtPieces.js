@@ -1,13 +1,22 @@
+import Image from "next/image";
+
 export default function ArtPieces({ pieces }) {
   return (
     <ul>
       {pieces.map((piece) => {
         return (
-          <li key={piece.slug}>
-            imageSource={piece.imageSource}
-            title={piece.name}
-            artist={piece.artist}
-          </li>
+          <>
+            <Image
+              src={piece.imageSource}
+              height={200}
+              width={300}
+              alt={piece.name}
+            />
+            <li key={piece.slug}>
+              title={piece.name}
+              artist={piece.artist}
+            </li>
+          </>
         );
       })}
     </ul>

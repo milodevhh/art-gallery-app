@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: { domains: ["example-apis.vercel.app"] }, // nur Domain ohne / und https
   compiler: {
     styledComponents: true,
   },
