@@ -11,7 +11,6 @@ export default function Spotlight({ pieces }) {
         width={200}
         alt={pieces[index].name}
       />
-      <h2>{pieces[index].name}</h2>
       <h3>{pieces[index].artist}</h3>
     </article>
   );
