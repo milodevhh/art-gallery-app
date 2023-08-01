@@ -1,6 +1,7 @@
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import Layout from "@/components/Layout";
+import { useEffect, useState } from "react";
 
 const fetcher = async (url) => {
   const response = await fetch(url);
@@ -24,6 +25,9 @@ export default function App({ Component, pageProps }) {
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
+
+  //const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+
   return (
     <>
       <GlobalStyle />
