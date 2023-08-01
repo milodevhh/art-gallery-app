@@ -1,16 +1,22 @@
-import useSWR from "swr";
-import ArtPieces from "@/components/ArtPieces";
 import Link from "next/link";
+import Image from "next/image";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art`
+export default function HomePage({ pieces }) {
+  const index = Math.floor(Math.random() * pieces.length);
+  console.log(index);
+  return (
+    <>
+      <article key={pieces[index].slug}>
+        <Image
+          src={pieces[index].imageSource}
+          height={300}
+          width={200}
+          alt={pieces[index].name}
+        />
+        <h2>{pieces[index].name}</h2>
+        <h3>{pieces[index].artist}</h3>
+      </article>
+      <Link href="./art-pieces">Go to all Art Pieces</Link>
+    </>
   );
-
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
-
-  return <Link href="./art-pieces"> Overview Page</Link>;
 }

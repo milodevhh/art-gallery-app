@@ -20,14 +20,13 @@ export default function App({ Component, pageProps }) {
     `https://example-apis.vercel.app/api/art`,
     fetcher
   );
-  console.log(data);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} data={data} />
+      <Component {...pageProps} pieces={data} />
     </>
   );
 }
