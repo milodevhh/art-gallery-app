@@ -1,11 +1,25 @@
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function Navigation() {
   return (
-    <nav>
-      <Link href="/">Spotlight</Link>
-      <Link href="/art-pieces">All Art Pieces</Link>
-      <Link href="/">Favorites</Link>
-    </nav>
+    <StyledNavigation>
+      <StyledLink href="/">Spotlight</StyledLink>
+      <StyledLink href="/art-pieces">All Art Pieces</StyledLink>
+      <StyledLink href="/">Favorites</StyledLink>
+    </StyledNavigation>
   );
 }
+
+const StyledNavigation = styled.nav`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledLink = styled(Link)`
+  background-color: gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+`;
