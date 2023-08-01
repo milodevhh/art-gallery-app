@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 
 export default function Spotlight({ pieces }) {
   const index = Math.floor(Math.random() * pieces.length);
-  console.log(index);
   return (
     <StyledArticle key={pieces[index].slug}>
       <ImageWrapper>
