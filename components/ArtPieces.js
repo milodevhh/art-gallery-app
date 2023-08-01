@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtPieces({ pieces }) {
   return (
@@ -16,6 +17,7 @@ export default function ArtPieces({ pieces }) {
               />
               <h2>{piece.name}</h2>
               <h3>{piece.artist}</h3>
+              <Link href={`art-pieces/${piece.slug}`}>{piece.name}</Link>
             </li>
           );
         })}
