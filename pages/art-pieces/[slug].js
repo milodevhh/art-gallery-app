@@ -1,5 +1,7 @@
 import ArtPieceDetails from "@/components/ArtPieceDetails";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { StyledLink } from "@/components/Navigation";
 
 export default function ArtPieces({ pieces }) {
   const router = useRouter();
@@ -7,18 +9,10 @@ export default function ArtPieces({ pieces }) {
 
   console.log(artPiece);
 
-  return <ArtPieceDetails artPiece={artPiece} />;
+  return (
+    <>
+      <ArtPieceDetails artPiece={artPiece} />
+      <StyledLink href="/art-pieces">back to all pieces</StyledLink>
+    </>
+  );
 }
-
-/*   const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art/${slug}`
-  ); 
-
-  if (error) {
-    return <div>failed to load</div>;
-  }
-
-  if (isLoading) {
-    return <div>loading...</div>;
-  }
-*/

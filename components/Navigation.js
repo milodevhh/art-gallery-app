@@ -16,7 +16,7 @@ const StyledNavigation = styled.nav`
   justify-content: space-between;
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   background-color: gray;
   border-radius: 0.5rem;
   padding: 0.5rem;
