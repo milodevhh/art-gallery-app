@@ -1,11 +1,22 @@
 import Image from "next/image";
 import { styled } from "styled-components";
+import FavoriteButton from "./FavoriteButton";
 
-export default function Spotlight({ pieces }) {
+export default function Spotlight({
+  pieces,
+  handleToggle,
+  isFavorite,
+  artPiece,
+}) {
   const index = Math.floor(Math.random() * pieces.length);
   return (
     <StyledArticle key={pieces[index].slug}>
       <ImageWrapper>
+        <FavoriteButton
+          handleToggle={handleToggle}
+          isFavorite={isFavorite}
+          slug={pieces.slug}
+        />
         <StyledImage
           src={pieces[index].imageSource}
           height={300}

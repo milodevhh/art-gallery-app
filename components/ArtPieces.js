@@ -3,12 +3,7 @@ import Link from "next/link";
 import { styled } from "styled-components";
 import FavoriteButton from "./FavoriteButton";
 
-export default function ArtPieces({
-  pieces,
-  isFavorite,
-  handleToggle,
-  artPiecesInfo,
-}) {
+export default function ArtPieces({ pieces, handleToggle, artPiecesInfo }) {
   return (
     <>
       <h1> List of all Art Pieces</h1>
