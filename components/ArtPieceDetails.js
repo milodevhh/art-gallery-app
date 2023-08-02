@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { styled } from "styled-components";
 
-export default function ArtPieceDetails({ artPiece }) {
+export default function ArtPieceDetails({ artPiece, artPiecesInfo }) {
   return (
     <>
       <StyledArticle key={artPiece.slug}>

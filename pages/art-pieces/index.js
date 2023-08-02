@@ -1,5 +1,11 @@
 import ArtPieces from "@/components/ArtPieces";
 
-export default function OverviewPage({ pieces }) {
-  return <ArtPieces pieces={pieces} />;
+export default function OverviewPage({ pieces, handleToggle, artPiecesInfo }) {
+  return (
+    <ArtPieces
+      pieces={pieces}
+      handleToggle={handleToggle}
+      artPiecesInfo={artPiecesInfo}
+    />
+  );
 }
