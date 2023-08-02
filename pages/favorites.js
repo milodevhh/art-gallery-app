@@ -5,16 +5,20 @@ export default function FavoritePieces({
   handleToggle,
   artPiecesInfo,
 }) {
-  const OnlyFavoritePieces = artPiecesInfo.filter(
+  const onlyFavoritePieces = artPiecesInfo.filter(
     (artPieceInfo) => artPieceInfo.isFavorite === true
   );
+  console.log(onlyFavoritePieces);
   return (
     <>
-      {" "}
-      {OnlyFavoritePieces.length === 0 ? (
+      {onlyFavoritePieces.length === 0 ? (
         "There are no favorites!"
       ) : (
-        <ArtPieces pieces={pieces} handleToggle={handleToggle} />
+        <ArtPieces
+          pieces={pieces}
+          handleToggle={handleToggle}
+          artPiecesInfo={onlyFavoritePieces}
+        />
       )}
     </>
   );
