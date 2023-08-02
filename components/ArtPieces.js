@@ -44,17 +44,3 @@ const StyledListItem = styled.li`
   list-style: none;
   margin-bottom: 2rem;
 `;
-
-const StyledButton = styled.button`
-  position: absolute;
-  right: 12em;
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  background: transparent;
-  & svg {
-    stroke: lightcoral;
-    fill: none;
-    stroke-width: 0.1rem;
-  }
-`;

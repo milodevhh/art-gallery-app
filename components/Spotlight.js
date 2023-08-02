@@ -2,20 +2,20 @@ import Image from "next/image";
 import { styled } from "styled-components";
 import FavoriteButton from "./FavoriteButton";
 
-export default function Spotlight({
-  pieces,
-  handleToggle,
-  isFavorite,
-  artPiece,
-}) {
+export default function Spotlight({ pieces, handleToggle, artPiecesInfo }) {
   const index = Math.floor(Math.random() * pieces.length);
+  const isFavorite = artPiecesInfo.find(
+    (artPieceInfo) => pieces[index].slug === artPieceInfo.slug
+  )?.isFavorite;
+
+  console.log(isFavorite);
   return (
     <StyledArticle key={pieces[index].slug}>
       <ImageWrapper>
         <FavoriteButton
           handleToggle={handleToggle}
+          slug={pieces[index].slug}
           isFavorite={isFavorite}
-          slug={pieces.slug}
         />
         <StyledImage
           src={pieces[index].imageSource}

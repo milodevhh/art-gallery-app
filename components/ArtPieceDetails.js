@@ -7,7 +7,6 @@ export default function ArtPieceDetails({
   isFavorite,
   handleToggle,
 }) {
-  console.log(artPiece.slug);
   return (
     <>
       <StyledArticle key={artPiece.slug}>

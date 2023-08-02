@@ -37,15 +37,13 @@ export default function App({ Component, pageProps }) {
     });
   }
 
-  console.log(artPiecesInfo);
-
   const { data, error, isLoading } = useSWR(
     `https://example-apis.vercel.app/api/art`,
     fetcher
   );
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (error) return <p>failed to load</p>;
+  if (isLoading) return <p>loading...</p>;
 
   return (
     <>
