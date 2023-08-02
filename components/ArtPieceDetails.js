@@ -1,11 +1,21 @@
 import Image from "next/image";
 import { styled } from "styled-components";
+import FavoriteButton from "./FavoriteButton";
 
-export default function ArtPieceDetails({ artPiece }) {
+export default function ArtPieceDetails({
+  artPiece,
+  isFavorite,
+  handleToggle,
+}) {
   return (
     <>
       <StyledArticle key={artPiece.slug}>
         <ImageWrapper>
+          <FavoriteButton
+            handleToggle={handleToggle}
+            slug={artPiece.slug}
+            isFavorite={isFavorite}
+          />
           <StyledImage
             src={artPiece.imageSource}
             height={300}
@@ -35,6 +45,7 @@ const StyledImage = styled(Image)`
 `;
 
 const ImageWrapper = styled.div`
+  position: relative;
   background-color: blue;
   width: 90%;
   height: 60vh;
