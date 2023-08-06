@@ -10,23 +10,27 @@ export default function Spotlight({ pieces, handleToggle, artPiecesInfo }) {
 
   console.log(isFavorite);
   return (
-    <StyledArticle key={pieces[index].slug}>
-      <ImageWrapper>
-        <FavoriteButton
-          handleToggle={handleToggle}
-          slug={pieces[index].slug}
-          isFavorite={isFavorite}
-        />
-        <StyledImage
-          src={pieces[index].imageSource}
-          height={300}
-          width={200}
-          alt={pieces[index].name}
-        />
-      </ImageWrapper>
-      <h3>{pieces[index].artist}</h3>
-      <p>Just a famous Artist for you...</p>
-    </StyledArticle>
+    <>
+      <h1>ART GALLERY</h1>
+      <h2>Have a look into Art</h2>
+      <StyledArticle key={pieces[index].slug}>
+        <ImageWrapper>
+          <FavoriteButton
+            handleToggle={handleToggle}
+            slug={pieces[index].slug}
+            isFavorite={isFavorite}
+          />
+          <StyledImage
+            src={pieces[index].imageSource}
+            height={300}
+            width={200}
+            alt={pieces[index].name}
+          />
+        </ImageWrapper>
+        <h3>{pieces[index].artist}</h3>
+        <p>Just a famous Artist for you...</p>
+      </StyledArticle>
+    </>
   );
 }
 
