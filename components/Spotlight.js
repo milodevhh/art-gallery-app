@@ -40,14 +40,13 @@ const StyledArticle = styled.article`
   align-items: center;
 `;
 
-const StyledImage = styled(Image)`
-  object-fit: cover;
+export const StyledImage = styled(Image)`
+  object-fit: contain;
   width: 100%;
   height: 100%;
 `;
 
 const ImageWrapper = styled.div`
-  background-color: blue;
   width: 90%;
   height: 60vh;
 `;

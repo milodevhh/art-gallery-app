@@ -22,7 +22,7 @@ export default function ArtPieces({ pieces, handleToggle, artPiecesInfo }) {
                 artPiecesInfo={artPiecesInfo}
               />
               <Link href={`art-pieces/${piece.slug}`}>
-                <Image
+                <StyledImage
                   src={piece.imageSource}
                   height={300}
                   width={200}
@@ -43,4 +43,10 @@ const StyledListItem = styled.li`
   position: relative;
   list-style: none;
   margin-bottom: 2rem;
+`;
+
+const StyledImage = styled(Image)`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 `;
