@@ -3,7 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { StyledLink } from "@/components/Navigation";
 
-export default function ArtPieces({ pieces, handleToggle, artPiecesInfo }) {
+export default function ArtPieces({
+  pieces,
+  handleToggle,
+  artPiecesInfo,
+  setArtPiecesInfo,
+}) {
   const router = useRouter();
   const artPiece = pieces.find(({ slug }) => slug === router.query.slug);
   const isFavorite = artPiecesInfo.find(
@@ -16,6 +21,8 @@ export default function ArtPieces({ pieces, handleToggle, artPiecesInfo }) {
         artPiece={artPiece}
         handleToggle={handleToggle}
         isFavorite={isFavorite}
+        setArtPiecesInfo={setArtPiecesInfo}
+        artPiecesInfo={artPiecesInfo}
       />
       <StyledLink href="/art-pieces">back to all pieces</StyledLink>
     </>

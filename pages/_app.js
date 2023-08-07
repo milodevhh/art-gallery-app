@@ -54,6 +54,7 @@ export default function App({ Component, pageProps }) {
           pieces={data}
           handleToggle={handleToggle}
           artPiecesInfo={artPiecesInfo}
+          setArtPiecesInfo={setArtPiecesInfo}
         />
       </Layout>
     </>
