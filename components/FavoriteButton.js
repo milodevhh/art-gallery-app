@@ -36,7 +36,7 @@ export default function FavoriteButton({ isFavorite, handleToggle, slug }) {
 
 const StyledButton = styled.button`
   position: absolute;
-  right: 12rem;
+  right: 0.5rem;
   width: 3rem;
   height: 3rem;
   border: none;
